@@ -42,7 +42,6 @@
             android:layout_width="104dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:checked="true"
             android:tag="Shimano Ultegra/30.0/Llum Shimano Ultegra led"
             android:text="Shimano Ultegra"
             android:textAlignment="textStart" />
@@ -58,8 +57,8 @@
 
     </RadioGroup>
 
-    <RadioGroup
-        android:id="@+id/garantia"
+    <LinearLayout
+        android:id="@+id/garantialy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -67,28 +66,8 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/llum">
-        <RadioButton
-            android:id="@+id/invisibleButton1"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:tag="Estandard/0.0/Garantia estandard de 3 anys"
-            android:background="@android:color/transparent"
-            android:visibility="gone" />
-        <RadioButton
-            android:id="@+id/invisibleButton2"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:tag="Ampliada/100.0/Garantia ampliada a 5 anys"
-            android:background="@android:color/transparent"
-            android:visibility="gone" />
-        <RadioButton
-            android:id="@+id/invisibleButton3"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:tag="Ampliada + seguro tot risc/100.0/Garantia ampliada a 5 anys + 1 any de seguro a tot risc "
-            android:background="@android:color/transparent"
-            android:visibility="gone"/>
+        app:layout_constraintTop_toBottomOf="@+id/portabidons">
+
         <TextView
             android:id="@+id/textView3"
             android:layout_width="120dp"
@@ -97,92 +76,65 @@
             android:textAlignment="textEnd"
             android:textSize="20sp" />
 
-        <LinearLayout
+        <RadioGroup
+            android:id="@id/garantia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <LinearLayout
+
+            <RadioButton
+                android:id="@+id/radioButton3"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="horizontal">
+                android:tag="Estandard/0.0/Garantia estandard de 3 anys"
+                android:text="Garantia estandard de 3 anys"
+                android:textAlignment="textStart"/>
 
-                <RadioButton
-                    android:id="@+id/radioButton3"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:checked="true"
-                    android:tag="Estandard/0.0/Garantia estandard de 3 anys"
-                    android:text="Garantia estandard de 3 anys"
-                    android:textAlignment="textStart" />
-
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:gravity="center"
-                    android:text="0.00€"
-                    android:textAlignment="gravity" />
-            </LinearLayout>
-
-            <LinearLayout
+            <RadioButton
+                android:id="@+id/radioButton4"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="horizontal">
+                android:tag="Ampliada/100.0/Garantia ampliada a 5 anys"
+                android:text="Garantia ampliada a 5 anys" />
 
-                <RadioButton
-                    android:id="@+id/radioButton4"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:checked="true"
-                    android:tag="Ampliada/100.0/Garantia ampliada a 5 anys"
-                    android:text="Garantia ampliada a 5 anys" />
-
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:gravity="center"
-                    android:text="100.00€"
-                    android:textAlignment="gravity" />
-            </LinearLayout>
-
-            <LinearLayout
+            <RadioButton
+                android:id="@+id/radioButton5"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:tag="Ampliada + seguro tot risc/100.0/Garantia ampliada a 5 anys + 1 any de seguro a tot risc "
+                android:text="Garantia ampliada + seguro tot risc 1 any" />
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                />
+        </RadioGroup>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-                <RadioButton
-                    android:id="@+id/radioButton5"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:checked="true"
-                    android:tag="Ampliada + seguro tot risc/100.0/Garantia ampliada a 5 anys + 1 any de seguro a tot risc "
-                    android:text="Garantia ampliada + seguro tot risc 1 any" />
-
-                <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:gravity="center"
-                    android:text="400.00€"
-                    android:textAlignment="gravity" />
-            </LinearLayout>
-
+            <TextView
+                android:layout_width="74dp"
+                android:layout_height="45dp"
+                android:text="0.00€"
+                android:textAlignment="center" />
+            <TextView
+                android:layout_width="74dp"
+                android:layout_height="45dp"
+                android:text="100.00€"
+                android:textAlignment="center" />
+            <TextView
+                android:layout_width="74dp"
+                android:layout_height="45dp"
+                android:text="400.00€"
+                android:textAlignment="center" />
         </LinearLayout>
-
-    </RadioGroup>
+    </LinearLayout>
 
     <RadioGroup
         android:id="@+id/gps"
@@ -193,13 +145,13 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/garantia">
+        app:layout_constraintTop_toBottomOf="@+id/llum">
 
         <TextView
             android:id="@+id/textView7"
             android:layout_width="120dp"
             android:layout_height="match_parent"
-            android:text="      GPS: "
+            android:text="GPS: "
             android:textAlignment="textEnd"
             android:textSize="20sp" />
 
@@ -208,8 +160,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_weight="1"
             android:checked="true"
+            android:layout_weight="1"
             android:text="No" />
 
         <RadioButton
@@ -300,7 +252,9 @@
         android:text="Acceptar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/portabidons" />
+        app:layout_constraintTop_toBottomOf="@+id/portabidons"
+        app:layout_constraintVertical_bias="0.948" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

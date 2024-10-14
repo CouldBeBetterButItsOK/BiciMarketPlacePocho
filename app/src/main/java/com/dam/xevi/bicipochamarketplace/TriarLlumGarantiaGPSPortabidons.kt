@@ -20,9 +20,6 @@ class TriarLlumGarantiaGPSPortabidons : AppCompatActivity() {
     private lateinit var garantiesid: RadioGroup
     private lateinit var llumsid: RadioGroup
     private lateinit var gpsid: RadioGroup
-    private lateinit var invisibleButton1: RadioButton
-    private lateinit var invisibleButton2: RadioButton
-    private lateinit var invisibleButton3: RadioButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,12 +35,12 @@ class TriarLlumGarantiaGPSPortabidons : AppCompatActivity() {
         val tagBiciGarantia = "${bicicleta.garantia.nom}/${bicicleta.garantia.preu}/${bicicleta.garantia.description}"
         val tagBiciLlum = "${bicicleta.llum?.nom}/${bicicleta.llum?.preu}/${bicicleta.llum?.description}"
         val tagBiciGps = "${bicicleta.gps?.nom}/${bicicleta.gps?.preu}/${bicicleta.gps?.description}"
-        if (bicicleta.portabidons != null) {
-            portabidonsid.findViewWithTag<RadioButton>(tagBiciPortabidons).isChecked = true
-        }
 
         garantiesid.findViewWithTag<RadioButton>(tagBiciGarantia).isChecked = true
 
+        if (bicicleta.portabidons != null) {
+            portabidonsid.findViewWithTag<RadioButton>(tagBiciPortabidons).isChecked = true
+        }
         if (bicicleta.llum != null) {
             llumsid.findViewWithTag<RadioButton>(tagBiciLlum).isChecked = true
         }
@@ -61,15 +58,25 @@ class TriarLlumGarantiaGPSPortabidons : AppCompatActivity() {
         val garantiesList = findViewById<RadioButton>(garantiesidRB).tag.toString().split("/")
         val llumsList = findViewById<RadioButton>(llumsidRB).tag.toString().split("/")
         val gpsList = findViewById<RadioButton>(gpsidRB).tag.toString().split("/")
-        if (portabidonsidRB != null) {
+        if (portabidonsList.size == 3) {
             bicicleta.portabidons = Portabidons(portabidonsList[0],portabidonsList[1].toDouble(),portabidonsList[2])
         }
+        else {
+            bicicleta.portabidons = null
+        }
+
         bicicleta.garantia = Garantia(garantiesList[0],garantiesList[1].toDouble(),garantiesList[2])
-        if (llumsidRB != null) {
+        if (llumsList.size == 3) {
             bicicleta.llum = Llum(llumsList[0],llumsList[1].toDouble(),llumsList[2])
         }
-        if (gpsidRB != null) {
+        else {
+            bicicleta.llum = null
+        }
+        if (gpsList.size == 3) {
             bicicleta.gps = GPS(gpsList[0],gpsList[1].toDouble(),gpsList[2])
+        }
+        else {
+            bicicleta.gps = null
         }
 
         val resultIntent = Intent()
