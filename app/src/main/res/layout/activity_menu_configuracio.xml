@@ -1,0 +1,580 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B9B9B9"
+    tools:context=".MenuConfiguracio">
+
+    <TextView
+        android:id="@+id/label_preuTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="36dp"
+        android:text="Preu Total:"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/continuarBT"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/preutotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="1000 €"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@id/label_preuTotal"
+        app:layout_constraintTop_toTopOf="@id/label_preuTotal" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Configuració"
+        android:textColor="#FF0000"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:background="#F1EDED"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/marca"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Marca:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bmarca"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:text="marca1"
+                android:background="@color/white"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/model"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Model: "
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bmodel"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:text="marca1"
+                android:background="@color/white"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/preubici"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/talla"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Talla:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btalla"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:background="@color/white"
+                android:focusable="true"
+                android:onClick="TriarTallaiColor"
+                android:text="marca1"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/color"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Color:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bcolor"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="TriarTallaiColor"
+                android:background="@color/white"
+                android:text="marca1"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/quadre"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Quadre:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bquadre"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:onClick="TriarCanviCuadroFreno"
+                android:text="marca1"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/preuquadre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="biciMontanya"
+                android:text="100€"
+                android:textAlignment="textEnd"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/canvi"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Canvi:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bcanvi"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="TriarCanviCuadroFreno"
+                android:text="marca1"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/preucanvi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="100€"
+                android:textAlignment="textEnd"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/frens"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Frens:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bfrens"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="TriarCanviCuadroFreno"
+                android:text="marca1"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/preufrens"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="100€"
+                android:textAlignment="textEnd"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/rodes"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Rodes:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/brodes"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="TriarRodesSeientIPedals"
+                android:text="marca1"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/preurodes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="100€"
+                android:textAlignment="textEnd"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/seient"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Seient:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bseient"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="TriarRodesSeientIPedals"
+                android:text="marca1"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/preuseient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="100€"
+                android:textAlignment="textEnd"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/pedals"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Pedals:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bpedals"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="TriarRodesSeientIPedals"
+                android:text="marca1"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/preupedals"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="100€"
+                android:textAlignment="textEnd"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/llum"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Llum:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bllum"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="TriarGarantiaGPSPortabidons"
+                android:text="marca1"
+                android:background="@color/white"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/preullum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="100€"
+                android:textAlignment="textEnd"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/garantia"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Garantia:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bgarantia"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="TriarGarantiaGPSPortabidons"
+                android:text="marca1"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:background="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/preugarantia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="100€"
+                android:textAlignment="textEnd"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/gps"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="GPS:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bgps"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="TriarGarantiaGPSPortabidons"
+                android:text="marca1"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:background="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/preugps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="100€"
+                android:textAlignment="textEnd"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/portabidons"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Portabidons:"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bportabidons"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="TriarGarantiaGPSPortabidons"
+                android:text="marca1"
+                android:background="@color/white"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/preuportabidons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="100€"
+                android:textAlignment="textEnd"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/continuarBT"
+        android:layout_width="161dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="32dp"
+
+        android:text="Finalitzar configuració"
+
+        android:onClick="TriarTallaiColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"/>
+
+<Button
+    android:id="@+id/TirarEnrereBT"
+    android:layout_width="161dp"
+    android:layout_height="58dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="140dp"
+    android:layout_marginEnd="16dp"
+    android:onClick="TirarEnrereBT"
+    android:text="Enrere"
+    app:layout_constraintEnd_toStartOf="@+id/continuarBT"
+    app:layout_constraintHorizontal_bias="0.528"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TriarTallaIColor"
+    android:background="#B9B9B9"
+    >
+
+    <RadioGroup
+        android:id="@+id/talles"
+        android:layout_width="305dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="#B1ABAB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+
+        <RadioButton
+            android:id="@+id/S"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="S"
+            android:checked="true"
+            android:text="S" />
+
+        <RadioButton
+            android:id="@+id/M"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="M"
+            android:text="M" />
+
+        <RadioButton
+            android:id="@+id/L"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="L"
+            android:text="L" />
+
+        <RadioButton
+            android:id="@+id/XL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="XL"
+            android:text="XL" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="Color"
+        android:textColor="#FF0000"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Talla"
+        android:textColor="#FF0000"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/colors" />
+
+    <RadioGroup
+        android:id="@+id/colors"
+        android:layout_width="362dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+        <RadioButton
+            android:id="@+id/Negre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#393737"
+            android:backgroundTint="#000000"
+            android:checked="true"
+            android:tag="Negre"
+            android:text="Negre"
+            android:textColor="#FFFFFF" />
+
+        <RadioButton
+            android:id="@+id/Gris"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#696969"
+            android:tag="Gris"
+            android:text="Gris"
+            android:textColor="#FFFFFF" />
+
+        <RadioButton
+            android:id="@+id/Vermell"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#421414"
+            android:tag="Vermell"
+            android:text="Vermell"
+            android:textColor="#FFFFFF" />
+
+        <RadioButton
+            android:id="@+id/Blanc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFBFB"
+            android:tag="Blanc"
+            android:text="Blanc" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/continuarBT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:onClick="acceptar"
+        android:text="Continuar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/talles" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
