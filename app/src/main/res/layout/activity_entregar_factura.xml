@@ -383,7 +383,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:onClick="Enviar"
                     android:text="juan.perez@email.com"
                     android:textSize="18dp" />
             </LinearLayout>
@@ -394,7 +393,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:onClick="TornarInici"
                 android:text="Descripció:"
                 android:textSize="20dp" />
 
@@ -559,7 +557,7 @@
             android:layout_width="130dp"
             android:layout_height="67dp"
             android:layout_gravity="right"
-            android:onClick="TornarInici"
+            android:onClick="Enviar"
             android:text="Tornar a començar" />
     </LinearLayout>
 
