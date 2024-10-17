@@ -8,5 +8,6 @@ data class Client(
     var direccioFacturacio: String? = null,
     var dni: String? = null,
     var telefon: String? = null,
-    var correuElectronic: String? = null
+    var correuElectronic: String? = null,
+    var iva:Int = 21
 ) : Serializable

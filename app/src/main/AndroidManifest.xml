@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BiciPochaMarketPlace"
         tools:targetApi="31">
+        <activity
+            android:name=".EntregarFactura"
+            android:exported="false" />
+        <activity
+            android:name=".Factura"
+            android:exported="false" />
         <activity android:name=".IntroduirDadesDeClient" />
         <activity android:name=".TriarLlumGarantiaGPSPortabidons" />
         <activity android:name=".TriarRodesSeientIPedals" />

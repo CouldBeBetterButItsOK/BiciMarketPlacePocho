@@ -52,7 +52,7 @@ class IntroduirDadesDeClient : AppCompatActivity() {
     fun acceptar(view: View){
         if(ComprovarCamps())
         {   CrearClient()
-            val intent = Intent(this, TriarBicicletaInicial::class.java)
+            val intent = Intent(this, EntregarFactura::class.java)
             intent.putExtra("client", client)
             intent.putExtra("bicicleta", bicicleta)
             startActivity(intent)
