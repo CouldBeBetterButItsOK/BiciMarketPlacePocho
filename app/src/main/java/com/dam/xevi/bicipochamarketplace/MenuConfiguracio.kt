@@ -11,25 +11,24 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.dam.xevi.bicipochamarketplace.models.Bicicleta
+import com.dam.xevi.bicipochamarketplace.models.*
 
 class MenuConfiguracio : AppCompatActivity() {
     companion object {
         const val REQUEST_CODE = 100
     }
     private lateinit var bicicleta: Bicicleta
+    private var client: Client? = null
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_CODE){
             if(resultCode == Activity.RESULT_OK){
                 val resultBicicleta = data?.getSerializableExtra("resultBicicleta") as? Bicicleta
-            resultBicicleta?.let{
-                Log.i("from size color", resultBicicleta.color.toString())
-                bicicleta = resultBicicleta
-                ActualitzarBicicleta()
-                Toast.makeText(this, "Bicicleta rebuda: ${it.model}", Toast.LENGTH_SHORT).show()
-            }
+                resultBicicleta?.let{
+                    bicicleta = resultBicicleta
+                    ActualitzarBicicleta()
+                }
             }
         }
     }
@@ -43,6 +42,7 @@ class MenuConfiguracio : AppCompatActivity() {
             insets
         }
         bicicleta = intent.getSerializableExtra("bicicleta") as Bicicleta
+        client = intent.getSerializableExtra("client") as? Client
         ActualitzarBicicleta()
 
 
@@ -71,6 +71,12 @@ class MenuConfiguracio : AppCompatActivity() {
         val intent = Intent(this, TriarLlumGarantiaGPSPortabidons::class.java)
         intent.putExtra("bicicleta", bicicleta)
         startActivityForResult(intent, REQUEST_CODE)
+    }
+    fun FinalitzarConfiguracio(view: View){
+        val intent = Intent(this, IntroduirDadesDeClient::class.java)
+        intent.putExtra("bicicleta", bicicleta)
+        client?.let {intent.putExtra("client", client) }
+        startActivity(intent)
     }
     fun ActualitzarBicicleta(){
         val bmarca = findViewById<TextView>(R.id.bmarca)
@@ -105,26 +111,26 @@ class MenuConfiguracio : AppCompatActivity() {
         bmodel.text = bicicleta.model
         btalla.text = bicicleta.talla
         bcolor.text = bicicleta.color
-        bquadre.text = bicicleta.quadre?.nom
-        preuquadre.text = bicicleta.quadre?.preu?.toString()
-        bcanvi.text = bicicleta.canvi?.nom
-        preucanvi.text = bicicleta.canvi?.preu?.toString()
-        bfrens.text = bicicleta.frens?.nom
-        preufrens.text = bicicleta.frens?.preu?.toString()
-        brodes.text = bicicleta.llantes?.nom
-        preurodes.text = bicicleta.llantes?.preu?.toString()
-        bseient.text = bicicleta.seient?.nom
-        preuseient.text = bicicleta.seient?.preu?.toString()
-        bpedals.text = bicicleta.pedals?.nom
-        preupedals.text = bicicleta.pedals?.preu?.toString()
-        bgarantia.text = bicicleta.garantia?.nom
-        preugarantia.text = bicicleta.garantia?.preu?.toString()
-        bgps.text = bicicleta.gps?.nom
-        preugps.text = bicicleta.gps?.preu?.toString()
-        bllum.text = bicicleta.llum?.nom
-        preullum.text = bicicleta.llum?.preu?.toString()
-        bportabidons.text = bicicleta.portabidons?.nom
-        preuportabidons.text = bicicleta.portabidons?.preu?.toString()
+        bquadre.text = bicicleta.quadre.nom
+        preuquadre.text = bicicleta.quadre.preu.toString()
+        bcanvi.text = bicicleta.canvi.nom
+        preucanvi.text = bicicleta.canvi.preu.toString()
+        bfrens.text = bicicleta.frens.nom
+        preufrens.text = bicicleta.frens.preu.toString()
+        brodes.text = bicicleta.llantes.nom
+        preurodes.text = bicicleta.llantes.preu.toString()
+        bseient.text = bicicleta.seient.nom
+        preuseient.text = bicicleta.seient.preu.toString()
+        bpedals.text = bicicleta.pedals.nom
+        preupedals.text = bicicleta.pedals.preu.toString()
+        bgarantia.text = bicicleta.garantia.nom
+        preugarantia.text = bicicleta.garantia.preu.toString()
+        bgps.text = bicicleta.gps.nom
+        preugps.text = bicicleta.gps.preu.toString()
+        bllum.text = bicicleta.llum.nom
+        preullum.text = bicicleta.llum.preu.toString()
+        bportabidons.text = bicicleta.portabidons.nom
+        preuportabidons.text = bicicleta.portabidons.preu.toString()
         bicicleta.calcularPreu()
         preutotal.text = bicicleta.preuTotal.toString()
     }

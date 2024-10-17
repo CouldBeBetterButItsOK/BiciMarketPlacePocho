@@ -16,10 +16,10 @@ data class Bicicleta(
     var llantes: Llanta = Llanta("Alumini Specialized", 0.0, "Llantes de alumini Specialized"),
     var seient: Seient = Seient("Specialized Bridge",0.0, "Seient Specialized Bridge"),
     var pedals: Pedal = Pedal("Shimano Ultegra", 0.0, "Pedals Shimano Ultegra"),
-    var llum: Llum? = null,
+    var llum: Llum = Llum("",0.0, "Llum no inclosa"),
     var garantia: Garantia = Garantia("Estandard", 0.0, "Garantia estandard de 3 anys"),
-    var gps: GPS? = null,
-    var portabidons: Portabidons? = null,
+    var gps: GPS = GPS("",0.0, "GPS no inclòs"),
+    var portabidons: Portabidons = Portabidons("",0.0, "Portabidons no inclòs"),
     var preuTotal: Double? = null
 ) : Serializable{
      fun calcularPreu(){

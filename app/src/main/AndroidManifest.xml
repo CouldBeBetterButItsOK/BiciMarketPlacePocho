@@ -12,9 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BiciPochaMarketPlace"
         tools:targetApi="31">
-        <activity
-            android:name=".TriarLlumGarantiaGPSPortabidons"
-            android:exported="false" />
+        <activity android:name=".IntroduirDadesDeClient" />
+        <activity android:name=".TriarLlumGarantiaGPSPortabidons" />
         <activity android:name=".TriarRodesSeientIPedals" />
         <activity android:name=".TriarQuadreCanviFrens" />
         <activity android:name=".TriarTallaIColor" />

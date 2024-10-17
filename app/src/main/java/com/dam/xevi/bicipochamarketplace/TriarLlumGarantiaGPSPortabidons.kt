@@ -31,22 +31,15 @@ class TriarLlumGarantiaGPSPortabidons : AppCompatActivity() {
         garantiesid = findViewById(R.id.garantia)
         llumsid = findViewById(R.id.llum)
         gpsid = findViewById(R.id.gps)
-        val tagBiciPortabidons = "${bicicleta.portabidons?.nom}/${bicicleta.portabidons?.preu}/${bicicleta.portabidons?.description}"
+        val tagBiciPortabidons = "${bicicleta.portabidons.nom}/${bicicleta.portabidons.preu}/${bicicleta.portabidons.description}"
         val tagBiciGarantia = "${bicicleta.garantia.nom}/${bicicleta.garantia.preu}/${bicicleta.garantia.description}"
-        val tagBiciLlum = "${bicicleta.llum?.nom}/${bicicleta.llum?.preu}/${bicicleta.llum?.description}"
-        val tagBiciGps = "${bicicleta.gps?.nom}/${bicicleta.gps?.preu}/${bicicleta.gps?.description}"
+        val tagBiciLlum = "${bicicleta.llum.nom}/${bicicleta.llum.preu}/${bicicleta.llum.description}"
+        val tagBiciGps = "${bicicleta.gps.nom}/${bicicleta.gps.preu}/${bicicleta.gps.description}"
 
         garantiesid.findViewWithTag<RadioButton>(tagBiciGarantia).isChecked = true
-
-        if (bicicleta.portabidons != null) {
-            portabidonsid.findViewWithTag<RadioButton>(tagBiciPortabidons).isChecked = true
-        }
-        if (bicicleta.llum != null) {
-            llumsid.findViewWithTag<RadioButton>(tagBiciLlum).isChecked = true
-        }
-        if (bicicleta.gps != null) {
-            gpsid.findViewWithTag<RadioButton>(tagBiciGps).isChecked = true
-        }
+        portabidonsid.findViewWithTag<RadioButton>(tagBiciPortabidons).isChecked = true
+        llumsid.findViewWithTag<RadioButton>(tagBiciLlum).isChecked = true
+        gpsid.findViewWithTag<RadioButton>(tagBiciGps).isChecked = true
     }
     fun acceptar(view: View){
         val portabidonsidRB = portabidonsid.checkedRadioButtonId
@@ -58,26 +51,10 @@ class TriarLlumGarantiaGPSPortabidons : AppCompatActivity() {
         val garantiesList = findViewById<RadioButton>(garantiesidRB).tag.toString().split("/")
         val llumsList = findViewById<RadioButton>(llumsidRB).tag.toString().split("/")
         val gpsList = findViewById<RadioButton>(gpsidRB).tag.toString().split("/")
-        if (portabidonsList.size == 3) {
-            bicicleta.portabidons = Portabidons(portabidonsList[0],portabidonsList[1].toDouble(),portabidonsList[2])
-        }
-        else {
-            bicicleta.portabidons = null
-        }
-
+        bicicleta.portabidons = Portabidons(portabidonsList[0],portabidonsList[1].toDouble(),portabidonsList[2])
         bicicleta.garantia = Garantia(garantiesList[0],garantiesList[1].toDouble(),garantiesList[2])
-        if (llumsList.size == 3) {
-            bicicleta.llum = Llum(llumsList[0],llumsList[1].toDouble(),llumsList[2])
-        }
-        else {
-            bicicleta.llum = null
-        }
-        if (gpsList.size == 3) {
-            bicicleta.gps = GPS(gpsList[0],gpsList[1].toDouble(),gpsList[2])
-        }
-        else {
-            bicicleta.gps = null
-        }
+        bicicleta.llum = Llum(llumsList[0],llumsList[1].toDouble(),llumsList[2])
+        bicicleta.gps = GPS(gpsList[0],gpsList[1].toDouble(),gpsList[2])
 
         val resultIntent = Intent()
         resultIntent.putExtra("resultBicicleta", bicicleta)

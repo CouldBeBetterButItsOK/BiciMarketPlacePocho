@@ -24,12 +24,13 @@
             android:id="@+id/textView1"
             android:layout_width="120dp"
             android:layout_height="match_parent"
-            android:text="       Llum:  "
+            android:text="Llum:  "
             android:textAlignment="textEnd"
             android:textSize="20sp" />
 
         <RadioButton
             android:id="@+id/radioButton1"
+            android:tag="/0.0/Llum no inclosa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -108,10 +109,6 @@
                 android:layout_weight="1"
                 android:tag="Ampliada + seguro tot risc/100.0/Garantia ampliada a 5 anys + 1 any de seguro a tot risc "
                 android:text="Garantia ampliada + seguro tot risc 1 any" />
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                />
         </RadioGroup>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -122,17 +119,17 @@
                 android:layout_width="74dp"
                 android:layout_height="45dp"
                 android:text="0.00€"
-                android:textAlignment="center" />
+                android:gravity="center" />
             <TextView
                 android:layout_width="74dp"
                 android:layout_height="45dp"
                 android:text="100.00€"
-                android:textAlignment="center" />
+                android:gravity="center" />
             <TextView
                 android:layout_width="74dp"
                 android:layout_height="45dp"
                 android:text="400.00€"
-                android:textAlignment="center" />
+                android:gravity="center" />
         </LinearLayout>
     </LinearLayout>
 
@@ -157,6 +154,7 @@
 
         <RadioButton
             android:id="@+id/radioButton6"
+            android:tag="/0.0/GPS no inclòs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -205,6 +203,7 @@
 
         <RadioButton
             android:id="@+id/radioButton8"
+            android:tag="/0.0/Portabidons no inclòs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -237,8 +236,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Complements"
-        android:textColor="#FF0000"
+        android:textColor="#690B0B"
         android:textSize="34sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/llum"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
